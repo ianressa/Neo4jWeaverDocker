@@ -13,6 +13,6 @@ RUN mvn clean package
 RUN chmod -R 777 /app/target
 
 # Entry point
-CMD sleep 5; java -Dneo4jUri=bolt://neo4jMaven:7687 -Dneo4jUser=neo4j -Dneo4jPassword=Password1 -jar /app/target/goblinWeaver-2.1.0.jar noUpdate
+CMD exec java -Dneo4jUri=bolt://neo4jMaven:7687 -Dneo4jUser=neo4j -Dneo4jPassword=Password1 -jar /app/target/goblinWeaver-2.1.0.jar noUpdate
 
 EXPOSE 8080
